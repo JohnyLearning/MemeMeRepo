@@ -24,10 +24,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let memeTextDelegate = MemeTextDelegate()
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
-        .strokeColor: UIColor.black,
         .foregroundColor: UIColor.white,
-        .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        .strokeWidth: 3.0
+        .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 35)!,
     ]
     
     override func viewDidLoad() {

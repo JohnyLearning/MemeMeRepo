@@ -24,7 +24,7 @@
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="klT-uu-fD2" userLabel="Image Toolbar">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="G8m-9X-XbF"/>
                                     <barButtonItem title="Item" image="camera" catalog="system" id="lkd-Vc-cdg">
@@ -71,7 +71,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wd5-Zg-9jo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1am-Og-6Wx"/>
                             <constraint firstItem="YDa-Ln-hH0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="60R-A7-KFH"/>
