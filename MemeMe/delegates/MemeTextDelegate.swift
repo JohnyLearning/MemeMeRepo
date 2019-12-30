@@ -12,6 +12,7 @@ import UIKit
 class MemeTextDelegate: NSObject, UITextFieldDelegate {
     
     var text: String?
+    var editing: Bool = false
     
     init(text: String?) {
         self.text = text
@@ -19,6 +20,7 @@ class MemeTextDelegate: NSObject, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
+        editing = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -30,6 +32,7 @@ class MemeTextDelegate: NSObject, UITextFieldDelegate {
         if textField.text?.isEmpty ?? false {
             textField.text = self.text
         }
+        editing = false
     }
     
 }

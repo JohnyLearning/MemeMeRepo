@@ -15,8 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="BGk-r9-oEC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memememememe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gL-C3-tx6">
-                                <rect key="frame" x="9.5" y="418.5" width="395" height="59"/>
+                                <rect key="frame" x="10" y="599" width="395" height="59"/>
                                 <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="53"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -24,11 +27,15 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1gL-C3-tx6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="374.5" id="avA-XO-zPX"/>
+                            <constraint firstItem="BGk-r9-oEC" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="5qQ-X1-4nr"/>
+                            <constraint firstItem="BGk-r9-oEC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EfY-Oz-MbP"/>
+                            <constraint firstItem="BGk-r9-oEC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y8Z-ol-mNf"/>
+                            <constraint firstItem="1gL-C3-tx6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="555" id="avA-XO-zPX"/>
+                            <constraint firstAttribute="bottom" secondItem="BGk-r9-oEC" secondAttribute="bottom" id="b8u-YA-1wj"/>
                             <constraint firstItem="1gL-C3-tx6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ezh-ou-MsD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1gL-C3-tx6" secondAttribute="trailing" constant="9.5" id="oOY-0a-jen"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1gL-C3-tx6" secondAttribute="bottom" constant="384.5" id="y0R-Wb-GVr"/>
-                            <constraint firstItem="1gL-C3-tx6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="zZQ-Qu-BRH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1gL-C3-tx6" secondAttribute="bottom" constant="204" id="y0R-Wb-GVr"/>
+                            <constraint firstItem="1gL-C3-tx6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="180.5" id="zZQ-Qu-BRH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +45,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchImage" width="1536" height="2048"/>
+    </resources>
 </document>
