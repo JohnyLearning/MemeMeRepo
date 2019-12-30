@@ -15,6 +15,7 @@
 		3AEB5A7823B91453000A7B76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEB5A7623B91453000A7B76 /* LaunchScreen.storyboard */; };
 		3AEB5A8123B91998000A7B76 /* MemeTextDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEB5A8023B91998000A7B76 /* MemeTextDelegate.swift */; };
 		3AF9527123B95E0F004A0086 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF9527023B95E0F004A0086 /* Meme.swift */; };
+		3AF9529323B996AE004A0086 /* Extension+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF9529223B996AE004A0086 /* Extension+ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3AEB5A7923B91453000A7B76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AEB5A8023B91998000A7B76 /* MemeTextDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTextDelegate.swift; sourceTree = "<group>"; };
 		3AF9527023B95E0F004A0086 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		3AF9529223B996AE004A0086 /* Extension+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				3AEB5A6B23B91451000A7B76 /* AppDelegate.swift */,
 				3AEB5A6D23B91451000A7B76 /* SceneDelegate.swift */,
 				3AEB5A6F23B91451000A7B76 /* ViewController.swift */,
+				3AF9529223B996AE004A0086 /* Extension+ViewController.swift */,
 				3AEB5A7123B91451000A7B76 /* Main.storyboard */,
 				3AEB5A7423B91453000A7B76 /* Assets.xcassets */,
 				3AEB5A7623B91453000A7B76 /* LaunchScreen.storyboard */,
@@ -164,6 +167,7 @@
 				3AEB5A8123B91998000A7B76 /* MemeTextDelegate.swift in Sources */,
 				3AEB5A6C23B91451000A7B76 /* AppDelegate.swift in Sources */,
 				3AEB5A6E23B91451000A7B76 /* SceneDelegate.swift in Sources */,
+				3AF9529323B996AE004A0086 /* Extension+ViewController.swift in Sources */,
 				3AF9527123B95E0F004A0086 /* Meme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

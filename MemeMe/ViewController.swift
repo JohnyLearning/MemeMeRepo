@@ -21,7 +21,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var memeObject: Meme?
     
-    let memeTextDelegate = MemeTextDelegate()
+    let topMemeDelegate = MemeTextDelegate(text: "TOP")
+    let bottomMemeDelegate = MemeTextDelegate(text: "BOTTOM")
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         .foregroundColor: UIColor.white,
@@ -34,8 +35,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.contentMode = UIView.ContentMode.scaleAspectFit
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         shareButton.isEnabled = false
-        setTextField(topWriting, text: "TOP")
-        setTextField(bottomWriting, text: "BOTTOM")
+        setTextField(topWriting, delegate: topMemeDelegate)
+        setTextField(bottomWriting, delegate: bottomMemeDelegate)
+        setupToHideKeyboardOnTapOnView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +61,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func shareImage(_ sender: Any) {
         let memeImage = generateMemedImage()
-        
         let shareController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
         
         shareController.popoverPresentationController?.sourceView = self.view
@@ -106,10 +107,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
-    private func setTextField(_ sender: UITextField, text: String) {
+    private func setTextField(_ sender: UITextField, delegate: MemeTextDelegate) {
         sender.defaultTextAttributes = memeTextAttributes
-        sender.delegate = memeTextDelegate
-        sender.text = text
+        sender.delegate = delegate
+        sender.text = delegate.text
         sender.textAlignment = .center
         sender.autocapitalizationType = .allCharacters
     }
@@ -143,4 +144,3 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
 }
-

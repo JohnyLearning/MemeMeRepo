@@ -11,6 +11,12 @@ import UIKit
 
 class MemeTextDelegate: NSObject, UITextFieldDelegate {
     
+    var text: String?
+    
+    init(text: String?) {
+        self.text = text
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
     }
@@ -19,4 +25,11 @@ class MemeTextDelegate: NSObject, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text?.isEmpty ?? false {
+            textField.text = self.text
+        }
+    }
+    
 }

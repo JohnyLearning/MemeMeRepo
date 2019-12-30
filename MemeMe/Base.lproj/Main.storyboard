@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,18 +12,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wd5-Zg-9jo">
-                                <rect key="frame" x="20" y="338.5" width="374" height="229"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="229" id="DD5-r4-LMy"/>
-                                    <constraint firstAttribute="width" constant="374" id="PL8-yG-JE0"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="44" width="343" height="579"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="klT-uu-fD2" userLabel="Image Toolbar">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="G8m-9X-XbF"/>
@@ -41,16 +37,8 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jEZ-5Z-mCs"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YDa-Ln-hH0">
-                                <rect key="frame" x="20" y="154" width="374" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="h7t-j3-Sox"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Yb-SN-Oco" userLabel="Share Toolbar">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="2e1-XY-T1M">
@@ -63,9 +51,17 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gWD-hu-6LV">
-                                <rect key="frame" x="20" y="766" width="374" height="17"/>
+                                <rect key="frame" x="16" y="576" width="343" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="5AO-2L-5t3"/>
+                                    <constraint firstAttribute="width" constant="343" id="5AO-2L-5t3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YDa-Ln-hH0">
+                                <rect key="frame" x="16" y="74" width="343" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="h7t-j3-Sox"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -73,20 +69,21 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wd5-Zg-9jo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1am-Og-6Wx"/>
+                            <constraint firstItem="klT-uu-fD2" firstAttribute="top" secondItem="wd5-Zg-9jo" secondAttribute="bottom" id="3rC-AJ-Csz"/>
                             <constraint firstItem="YDa-Ln-hH0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="60R-A7-KFH"/>
+                            <constraint firstItem="wd5-Zg-9jo" firstAttribute="top" secondItem="5Yb-SN-Oco" secondAttribute="bottom" id="6Jw-8e-egM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wd5-Zg-9jo" secondAttribute="trailing" constant="16" id="E8s-Kf-kml"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="klT-uu-fD2" secondAttribute="trailing" id="HUT-9z-xOq"/>
-                            <constraint firstItem="wd5-Zg-9jo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="P8A-xm-xmI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="klT-uu-fD2" secondAttribute="bottom" id="RQW-1T-J82"/>
+                            <constraint firstItem="wd5-Zg-9jo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TEG-NT-aaw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Yb-SN-Oco" secondAttribute="trailing" id="UCe-lr-whW"/>
                             <constraint firstItem="klT-uu-fD2" firstAttribute="top" secondItem="gWD-hu-6LV" secondAttribute="bottom" constant="30" id="UnI-QP-9Dq"/>
                             <constraint firstItem="YDa-Ln-hH0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VVe-li-Ugf"/>
                             <constraint firstItem="gWD-hu-6LV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eUi-rA-Vsr"/>
                             <constraint firstItem="5Yb-SN-Oco" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hcI-78-1up"/>
                             <constraint firstItem="klT-uu-fD2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lgQ-kX-sN9"/>
-                            <constraint firstItem="YDa-Ln-hH0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="110" id="oQg-t9-typ"/>
+                            <constraint firstItem="YDa-Ln-hH0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="oQg-t9-typ"/>
                             <constraint firstItem="5Yb-SN-Oco" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vfV-cr-7fu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wd5-Zg-9jo" secondAttribute="trailing" constant="20" id="xep-qp-0YP"/>
                             <constraint firstItem="klT-uu-fD2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xoX-uZ-fE2"/>
                             <constraint firstItem="klT-uu-fD2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zx6-tx-Jac"/>
                         </constraints>
@@ -104,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="136.80000000000001" y="138.0809595202399"/>
         </scene>
     </scenes>
     <resources>
