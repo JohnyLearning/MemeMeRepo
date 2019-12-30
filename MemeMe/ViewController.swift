@@ -14,6 +14,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topWriting: UITextField!
     @IBOutlet weak var bottomWriting: UITextField!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    
+    @IBOutlet weak var shareToolbar: UIToolbar!
+    @IBOutlet weak var imageToolbar: UIToolbar!
+    
+    var memeObject: Meme?
+    
     let memeTextDelegate = MemeTextDelegate()
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
@@ -28,6 +35,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Do any additional setup after loading the view.
         imagePicker.contentMode = UIView.ContentMode.scaleAspectFit
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        shareButton.isEnabled = false
         setTextField(topWriting, text: "TOP")
         setTextField(bottomWriting, text: "BOTTOM")
     }
@@ -43,18 +51,50 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func pickImageFromAlbum(_ sender: Any) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .photoLibrary
-        present(pickerController, animated: true, completion: nil)
+        pickImage(sender, sourceType: .photoLibrary)
     }
     
     
     @IBAction func pickImageFromCamera(_ sender: Any) {
+        pickImage(sender, sourceType: .camera)
+    }
+    
+    @IBAction func shareImage(_ sender: Any) {
+        let memeImage = generateMemedImage()
+        
+        let shareController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
+        
+        shareController.popoverPresentationController?.sourceView = self.view
+
+        self.present(shareController, animated: true, completion: nil)
+    }
+    
+    private func pickImage(_ sender: Any, sourceType: UIImagePickerController.SourceType) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.sourceType = .camera
+        pickerController.sourceType = sourceType
         present(pickerController, animated: true, completion: nil)
+        shareButton.isEnabled = true
+    }
+    
+    private func generateMemedImage() -> UIImage {
+
+        setToolbarsVisibility(hidden: true)
+
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        setToolbarsVisibility(hidden: false)
+
+        return memedImage
+    }
+    
+    private func setToolbarsVisibility(hidden: Bool) {
+        shareToolbar.isHidden = hidden
+        imageToolbar.isHidden = hidden
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
