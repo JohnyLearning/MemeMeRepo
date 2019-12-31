@@ -34,7 +34,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePicker.contentMode = UIView.ContentMode.scaleAspectFill
+        imagePicker.contentMode = UIView.ContentMode.scaleAspectFit
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         shareButton.isEnabled = false
         setTextField(topWriting, delegate: topMemeDelegate)
@@ -66,6 +66,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let shareController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
         
         shareController.popoverPresentationController?.sourceView = self.view
+        
+        shareController.completionWithItemsHandler = { activity, success, items, error in
+            if success  {
+                self.save(memedImage: memeImage)
+            }
+        }
 
         self.present(shareController, animated: true, completion: nil)
     }

@@ -103,4 +103,9 @@ extension ViewController  {
         }
     }
     
+    func save(memedImage: UIImage) {
+        // Create meme object
+        let meme = Meme(topText: topWriting.text!, bottomText: bottomWriting.text!, originalImage: imagePicker.image!, memedImage: memedImage)
+    }
+    
 }
