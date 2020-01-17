@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     static let TOP_WRITING_INITAL_TEXT = "TOP"
     static let BOTTOM_WRITING_INITAL_TEXT = "BOTTOM"
@@ -24,8 +24,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var memeObject: Meme?
     
-    var topMemeDelegate = MemeTextDelegate(text: ViewController.TOP_WRITING_INITAL_TEXT)
-    var bottomMemeDelegate = MemeTextDelegate(text: ViewController.BOTTOM_WRITING_INITAL_TEXT)
+    var topMemeDelegate = MemeTextDelegate(text: MemeEditorViewController.TOP_WRITING_INITAL_TEXT)
+    var bottomMemeDelegate = MemeTextDelegate(text: MemeEditorViewController.BOTTOM_WRITING_INITAL_TEXT)
     
     static let memeTextAttributes: [NSAttributedString.Key: Any] = [
         .foregroundColor: UIColor.white,
@@ -78,8 +78,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func reset(_ sender: Any) {
         imagePicker.image = nil
-        topWriting.text = ViewController.TOP_WRITING_INITAL_TEXT
-        bottomWriting.text = ViewController.BOTTOM_WRITING_INITAL_TEXT
+        topWriting.text = MemeEditorViewController.TOP_WRITING_INITAL_TEXT
+        bottomWriting.text = MemeEditorViewController.BOTTOM_WRITING_INITAL_TEXT
         shareButton.isEnabled = false
     }
     

@@ -10,13 +10,13 @@
 import Foundation
 import UIKit
 
-extension ViewController  {
+extension MemeEditorViewController  {
     
     func setupToHideKeyboardOnTapOnView()
     {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
-            action: #selector(ViewController.dismissKeyboard))
+            action: #selector(MemeEditorViewController.dismissKeyboard))
 
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
@@ -73,7 +73,7 @@ extension ViewController  {
     }
     
     func setTextField(_ sender: UITextField, delegate: MemeTextDelegate) {
-        sender.defaultTextAttributes = ViewController.memeTextAttributes
+        sender.defaultTextAttributes = MemeEditorViewController.memeTextAttributes
         sender.delegate = delegate
         sender.text = delegate.text
         sender.textAlignment = .center
@@ -106,6 +106,11 @@ extension ViewController  {
     func save(memedImage: UIImage) {
         // Create meme object
         let meme = Meme(topText: topWriting.text!, bottomText: bottomWriting.text!, originalImage: imagePicker.image!, memedImage: memedImage)
+        
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
 }
