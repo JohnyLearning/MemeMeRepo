@@ -30,7 +30,7 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell") as! MemeTableViewCell
         let meme = memes[(indexPath as NSIndexPath).row]
         
-        cell.imageView?.image = meme.memedImage
+        cell.memeImageView?.image = meme.memedImage
         cell.topText?.text = meme.topText
         cell.bottomText?.text = meme.bottomText
         return cell
@@ -40,6 +40,10 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
         detailController.meme = self.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
     }
 
 }
