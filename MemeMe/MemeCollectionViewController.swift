@@ -11,6 +11,8 @@ import UIKit
 class MemeCollectionViewController: UICollectionViewController {
     
     @IBOutlet var memsCollection: UICollectionView!
+    @IBOutlet var flowLayout: UICollectionViewFlowLayout!
+    
     
     var memes: [Meme] {
         return (UIApplication.shared.delegate as! AppDelegate).memes
@@ -21,6 +23,16 @@ class MemeCollectionViewController: UICollectionViewController {
         self.memsCollection.reloadData()
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    override func viewDidLoad() {
+        let space:CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.memes.count
     }

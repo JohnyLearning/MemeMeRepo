@@ -46,11 +46,14 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     @IBAction func pickImageFromAlbum(_ sender: Any) {
@@ -71,6 +74,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         shareController.completionWithItemsHandler = { activity, success, items, error in
             if success  {
                 self.save(memedImage: memeImage)
+                self.navigationController?.popViewController(animated: true)
             }
         }
 
@@ -82,6 +86,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         topWriting.text = MemeEditorViewController.TOP_WRITING_INITAL_TEXT
         bottomWriting.text = MemeEditorViewController.BOTTOM_WRITING_INITAL_TEXT
         shareButton.isEnabled = false
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
