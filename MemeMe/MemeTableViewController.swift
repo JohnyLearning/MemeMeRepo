@@ -41,9 +41,5 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         detailController.meme = self.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
-    }
 
 }
