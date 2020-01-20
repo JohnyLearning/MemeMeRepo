@@ -17,7 +17,9 @@ class MemeCollectionViewController: UICollectionViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.memsCollection.reloadData()
+        self.tabBarController?.tabBar.isHidden = false
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.memes.count
@@ -36,9 +38,9 @@ class MemeCollectionViewController: UICollectionViewController {
    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath:IndexPath) {
        
-//       let detailController = self.storyboard!.instantiateViewController(withIdentifier: "VillainDetailViewController") as! VillainDetailViewController
-//       detailController.villain = self.allVillains[(indexPath as NSIndexPath).row]
-//       self.navigationController!.pushViewController(detailController, animated: true)
+       let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+       detailController.meme = self.memes[(indexPath as NSIndexPath).row]
+       self.navigationController!.pushViewController(detailController, animated: true)
        
     }
 
