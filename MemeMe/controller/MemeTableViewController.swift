@@ -20,6 +20,7 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewWillAppear(animated)
         self.memesTableView?.reloadData()
         self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

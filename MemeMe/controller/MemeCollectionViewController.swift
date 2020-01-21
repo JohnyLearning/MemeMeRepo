@@ -22,6 +22,7 @@ class MemeCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         self.memsCollection.reloadData()
         self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewDidLoad() {
