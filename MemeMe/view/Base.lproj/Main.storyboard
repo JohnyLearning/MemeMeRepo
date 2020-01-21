@@ -213,10 +213,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Meme detail" id="Zfl-Oq-QQb">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.left" catalog="system" id="49d-gS-leK"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.left" catalog="system" id="49d-gS-leK">
+                                            <connections>
+                                                <action selector="goBack:" destination="INf-Cf-bG7" id="wmA-Q0-hR7"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <rightBarButtonItems>
-                                            <barButtonItem title="Edit" image="square.and.pencil" catalog="system" id="aB6-Lv-34o"/>
-                                            <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="pKP-Wd-f5A"/>
+                                            <barButtonItem title="Edit" image="square.and.pencil" catalog="system" id="aB6-Lv-34o">
+                                                <connections>
+                                                    <action selector="editMeme:" destination="INf-Cf-bG7" id="6yH-gR-5Nm"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="pKP-Wd-f5A">
+                                                <connections>
+                                                    <action selector="shareImage:" destination="INf-Cf-bG7" id="yw4-hi-zNH"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
@@ -243,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M6P-BK-A2n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="189.59999999999999" y="-37.331334332833585"/>
+            <point key="canvasLocation" x="-214" y="340"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="psO-KQ-3Aq">
@@ -284,11 +296,14 @@
         <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditorViewController" id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wd5-Zg-9jo">
+                                <rect key="frame" x="16" y="118" width="343" height="421"/>
+                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="klT-uu-fD2" userLabel="Image Toolbar">
                                 <rect key="frame" x="0.0" y="569" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -325,9 +340,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wd5-Zg-9jo">
-                                <rect key="frame" x="16" y="88" width="343" height="530"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YDa-Ln-hH0">
                                 <rect key="frame" x="16" y="118" width="343" height="17"/>
                                 <constraints>
@@ -347,9 +359,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="klT-uu-fD2" firstAttribute="top" secondItem="wd5-Zg-9jo" secondAttribute="bottom" constant="-49" id="3rC-AJ-Csz"/>
+                            <constraint firstItem="klT-uu-fD2" firstAttribute="top" secondItem="wd5-Zg-9jo" secondAttribute="bottom" constant="30" id="3rC-AJ-Csz"/>
                             <constraint firstItem="YDa-Ln-hH0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="60R-A7-KFH"/>
-                            <constraint firstItem="wd5-Zg-9jo" firstAttribute="top" secondItem="5Yb-SN-Oco" secondAttribute="bottom" id="6Jw-8e-egM"/>
+                            <constraint firstItem="wd5-Zg-9jo" firstAttribute="top" secondItem="5Yb-SN-Oco" secondAttribute="bottom" constant="30" id="6Jw-8e-egM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wd5-Zg-9jo" secondAttribute="trailing" constant="16" id="E8s-Kf-kml"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="klT-uu-fD2" secondAttribute="trailing" id="HUT-9z-xOq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="klT-uu-fD2" secondAttribute="bottom" id="RQW-1T-J82"/>

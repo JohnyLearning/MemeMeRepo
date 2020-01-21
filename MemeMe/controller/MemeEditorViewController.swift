@@ -22,10 +22,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var shareToolbar: UIToolbar!
     @IBOutlet weak var imageToolbar: UIToolbar!
     
-    var memeObject: Meme?
+    var meme: Meme?
     
-    var topMemeDelegate = MemeTextDelegate(text: MemeEditorViewController.TOP_WRITING_INITAL_TEXT)
-    var bottomMemeDelegate = MemeTextDelegate(text: MemeEditorViewController.BOTTOM_WRITING_INITAL_TEXT)
+    var topMemeDelegate: MemeTextDelegate?
+    var bottomMemeDelegate: MemeTextDelegate?
     
     static let memeTextAttributes: [NSAttributedString.Key: Any] = [
         .foregroundColor: UIColor.white,
@@ -37,8 +37,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         imagePicker.contentMode = UIView.ContentMode.scaleAspectFit
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         shareButton.isEnabled = false
-        setTextField(topWriting, delegate: topMemeDelegate)
-        setTextField(bottomWriting, delegate: bottomMemeDelegate)
+        topMemeDelegate = MemeTextDelegate(text: meme?.topText ?? MemeEditorViewController.TOP_WRITING_INITAL_TEXT)
+        bottomMemeDelegate = MemeTextDelegate(text: MemeEditorViewController.BOTTOM_WRITING_INITAL_TEXT)
+        setTextField(topWriting, delegate: topMemeDelegate!)
+        setTextField(bottomWriting, delegate: bottomMemeDelegate!)
         setupToHideKeyboardOnTapOnView()
     }
     
@@ -47,6 +49,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         subscribeToKeyboardNotifications()
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        if let memeImage = meme?.originalImage {
+            imagePicker.image = memeImage
+            self.topWriting.text = meme?.topText ?? MemeEditorViewController.TOP_WRITING_INITAL_TEXT
+            self.bottomWriting.text = meme?.bottomText ?? MemeEditorViewController.BOTTOM_WRITING_INITAL_TEXT
+            shareButton.isEnabled = true
+        }
     }
     
     
@@ -83,8 +91,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func reset(_ sender: Any) {
         imagePicker.image = nil
-        topWriting.text = MemeEditorViewController.TOP_WRITING_INITAL_TEXT
-        bottomWriting.text = MemeEditorViewController.BOTTOM_WRITING_INITAL_TEXT
+        topWriting.text = meme?.topText ?? MemeEditorViewController.TOP_WRITING_INITAL_TEXT
+        bottomWriting.text = meme?.bottomText ?? MemeEditorViewController.BOTTOM_WRITING_INITAL_TEXT
         shareButton.isEnabled = false
         self.navigationController?.popViewController(animated: true)
     }

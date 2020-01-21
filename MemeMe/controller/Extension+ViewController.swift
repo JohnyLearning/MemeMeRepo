@@ -92,8 +92,10 @@ extension MemeEditorViewController  {
     
     @objc func keyboardWillShow(_ notification:Notification) {
         let keyboardHeight = getKeyboardHeight(notification)
-        if  (view.frame.origin.y ==  0 && bottomMemeDelegate.editing) {
-            view.frame.origin.y -= keyboardHeight
+        if let bottomDelegate = bottomMemeDelegate {
+            if  (view.frame.origin.y ==  0 && bottomDelegate.editing) {
+                view.frame.origin.y -= keyboardHeight
+            }
         }
     }
     
