@@ -29,7 +29,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     static let memeTextAttributes: [NSAttributedString.Key: Any] = [
         .foregroundColor: UIColor.white,
-        .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 35)!,
+        .font: UIFont(name: "Impact", size: 35)!,
     ]
     
     override func viewDidLoad() {
