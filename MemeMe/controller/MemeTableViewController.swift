@@ -42,5 +42,16 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         detailController.meme = self.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
+            (UIApplication.shared.delegate as! AppDelegate).memes.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
 
 }
