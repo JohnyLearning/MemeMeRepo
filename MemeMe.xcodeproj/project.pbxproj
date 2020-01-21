@@ -72,20 +72,10 @@
 		3AEB5A6A23B91451000A7B76 /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				3AF1A12223D68621004E4CD4 /* view */,
+				3AF1A12123D685F9004E4CD4 /* controller */,
 				3AF9526F23B95DF7004A0086 /* model */,
-				3AEB5A7F23B9196F000A7B76 /* delegates */,
-				3AEB5A6B23B91451000A7B76 /* AppDelegate.swift */,
-				3AEB5A6D23B91451000A7B76 /* SceneDelegate.swift */,
-				3AEB5A6F23B91451000A7B76 /* MemeEditorViewController.swift */,
-				3AF9529223B996AE004A0086 /* Extension+ViewController.swift */,
-				3ABA90D023D4D19B00A3E639 /* MemeCollectionViewController.swift */,
-				3A4B42C123D4FFF300C9B2A2 /* MemeCollectionViewCell.swift */,
-				3ABA90D223D4E72E00A3E639 /* MemeTableViewController.swift */,
-				3A4B42C323D5183700C9B2A2 /* MemeTableViewCell.swift */,
-				3A4B42C523D53A4B00C9B2A2 /* MemeDetailViewController.swift */,
-				3AEB5A7123B91451000A7B76 /* Main.storyboard */,
 				3AEB5A7423B91453000A7B76 /* Assets.xcassets */,
-				3AEB5A7623B91453000A7B76 /* LaunchScreen.storyboard */,
 				3AEB5A7923B91453000A7B76 /* Info.plist */,
 			);
 			path = MemeMe;
@@ -95,8 +85,34 @@
 			isa = PBXGroup;
 			children = (
 				3AEB5A8023B91998000A7B76 /* MemeTextDelegate.swift */,
+				3AEB5A6B23B91451000A7B76 /* AppDelegate.swift */,
+				3AEB5A6D23B91451000A7B76 /* SceneDelegate.swift */,
 			);
 			path = delegates;
+			sourceTree = "<group>";
+		};
+		3AF1A12123D685F9004E4CD4 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				3AEB5A6F23B91451000A7B76 /* MemeEditorViewController.swift */,
+				3AF9529223B996AE004A0086 /* Extension+ViewController.swift */,
+				3ABA90D023D4D19B00A3E639 /* MemeCollectionViewController.swift */,
+				3ABA90D223D4E72E00A3E639 /* MemeTableViewController.swift */,
+				3A4B42C523D53A4B00C9B2A2 /* MemeDetailViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		3AF1A12223D68621004E4CD4 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3AEB5A7F23B9196F000A7B76 /* delegates */,
+				3A4B42C123D4FFF300C9B2A2 /* MemeCollectionViewCell.swift */,
+				3A4B42C323D5183700C9B2A2 /* MemeTableViewCell.swift */,
+				3AEB5A7123B91451000A7B76 /* Main.storyboard */,
+				3AEB5A7623B91453000A7B76 /* LaunchScreen.storyboard */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		3AF9526F23B95DF7004A0086 /* model */ = {
