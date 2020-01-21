@@ -19,7 +19,11 @@ class MemeTextDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.text = ""
+        if textField.text == MemeEditorViewController.TOP_WRITING_INITAL_TEXT ||
+            textField.text == MemeEditorViewController.BOTTOM_WRITING_INITAL_TEXT
+        {
+            textField.text = ""
+        }
         editing = true
     }
     
